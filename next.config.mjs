@@ -11,6 +11,10 @@ const config = {
   reactStrictMode: true,
   swcMinify: true,
   productionBrowserSourceMaps: true,
+  images: {
+    loader: 'custom',
+    formats: ['image/avif', 'image/webp'],
+  },
 };
 
 export default config;
