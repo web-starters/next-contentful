@@ -7,12 +7,12 @@ import { Heading } from '@/components/atoms/heading';
 import { Text } from '@/components/atoms/text';
 
 interface Props {
-  params: { lang: Locale };
+  params: { locale: Locale };
 }
 
 export default async function Page({ params }: Props) {
   const { isEnabled } = draftMode();
-  const content = await getHomePageContent(params.lang, isEnabled);
+  const content = await getHomePageContent(params.locale, isEnabled);
 
   return (
     <div>
