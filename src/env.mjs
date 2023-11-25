@@ -7,6 +7,11 @@ import { z } from 'zod';
 const server = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']),
   APP_URL: z.string().min(1),
+  CONTENTFUL_SPACE_ID: z.string().min(1),
+  CONTENTFUL_ACCESS_TOKEN: z.string().min(1),
+  CONTENTFUL_PREVIEW_ACCESS_TOKEN: z.string().min(1),
+  CONTENTFUL_PREVIEW_SECRET: z.string().min(1),
+  CONTENTFUL_REVALIDATE_SECRET: z.string().min(1),
 });
 
 /**
@@ -24,6 +29,11 @@ const client = z.object({});
 const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
   APP_URL: process.env.APP_URL,
+  CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+  CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
+  CONTENTFUL_PREVIEW_ACCESS_TOKEN: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
+  CONTENTFUL_PREVIEW_SECRET: process.env.CONTENTFUL_PREVIEW_SECRET,
+  CONTENTFUL_REVALIDATE_SECRET: process.env.CONTENTFUL_REVALIDATE_SECRET,
 };
 
 // Don't touch the part below
