@@ -8,6 +8,7 @@ async function fetchGraphQL(query: string) {
       Authorization: `Bearer ${env.CONTENTFUL_ACCESS_TOKEN}`,
     },
     body: JSON.stringify({ query }),
+    next: { tags: ['contentful'] },
   }).then(response => response.json());
 }
 
