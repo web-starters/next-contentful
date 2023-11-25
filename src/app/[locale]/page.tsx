@@ -1,5 +1,3 @@
-import { draftMode } from 'next/headers';
-
 import { type Locale } from '@/i18n-config';
 import { getHomePageContent } from '@/lib/api';
 
@@ -11,14 +9,15 @@ interface Props {
 }
 
 export default async function Page({ params }: Props) {
-  const { isEnabled } = draftMode();
-  const content = await getHomePageContent(params.locale, isEnabled);
+  const content = await getHomePageContent(params.locale);
 
   return (
-    <div>
-      <Heading>{content.title}</Heading>
+    <section className="w-full p-5">
+      <div className="w-full max-w-7xl mx-auto">
+        <Heading>{content.title}</Heading>
 
-      <Text>{content.description}</Text>
-    </div>
+        <Text>{content.description}</Text>
+      </div>
+    </section>
   );
 }
