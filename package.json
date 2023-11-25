@@ -1,7 +1,7 @@
 {
   "name": "next-contentful",
   "version": "0.1.0",
-  "description": "Next App",
+  "description": "Next.js Contentful starter",
   "author": "Łukasz Warchoł <coded-bear>",
   "scripts": {
     "dev": "next dev --turbo",
