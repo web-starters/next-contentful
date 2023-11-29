@@ -21,7 +21,7 @@ export default async function Page({ params }: Props) {
 
         <div className="grid grid-cols-3 gap-5">
           {allPosts.map(post => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}>
+            <Link key={post.slug} href={`/${params.locale}/blog/${post.slug}`}>
               <div>
                 <ContentfulImage
                   className="mb-2 rounded-md"
