@@ -1,7 +1,10 @@
-import { type Locale } from '@/i18n-config';
 import { getAllPosts, getPost } from '@/lib/api';
+import { type Locale } from '@/i18n-config';
 
 import { Heading } from '@/components/atoms/heading';
+import { Text } from '@/components/atoms/text';
+import { Markdown } from '@/components/atoms/markdown';
+import { ContentfulImage } from '@/components/atoms/contentful-image';
 
 interface Props {
   params: {
@@ -17,12 +20,24 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: Props) {
-  const content = await getPost(params.locale, params.slug);
+  const post = await getPost(params.locale, params.slug);
 
   return (
     <section className="w-full p-5">
       <div className="w-full max-w-7xl mx-auto">
-        <Heading>{content.title}</Heading>
+        <Heading>{post.title}</Heading>
+
+        <Text>{post.date}</Text>
+
+        <ContentfulImage
+          src={post.coverImage.url}
+          width={2000}
+          height={1000}
+          alt={post.title}
+          priority
+        />
+
+        <Markdown content={post.content} />
       </div>
     </section>
   );
