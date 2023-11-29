@@ -12,6 +12,7 @@ interface ContentfulImageProps extends ContentfulLoaderProps {
   height?: number;
   alt: string;
   priority?: boolean;
+  className?: string;
 }
 
 const contentfulLoader = ({ src, width, quality }: ContentfulLoaderProps) => {

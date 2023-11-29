@@ -30,6 +30,7 @@ export default async function Page({ params }: Props) {
         <Text>{post.date}</Text>
 
         <ContentfulImage
+          className="my-8 rounded-md"
           src={post.coverImage.url}
           width={2000}
           height={1000}
